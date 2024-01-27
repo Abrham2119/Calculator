@@ -4,6 +4,7 @@ const app=express();
 
 app.get('/',(req,res)=>{
     res.send('world ');
+    
 });
 
 app.listen(3005 ,function(){
