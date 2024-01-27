@@ -5,6 +5,8 @@ const app=express();
 
 app.use(bodyParser.urlencoded({extended:true}));
 
+
+//Calculator
 app.get('/',(req,res)=>{
     res.sendFile(__dirname + '/index.html');
     
@@ -23,20 +25,22 @@ app.post('/',function(req,res){
 
 
 
+
+
 //BMI-calculator
 
-app.get('/bmicalculator', function(req, res) {
-    res.sendFile(__dirname + '/BMIcalculator.html');
+app.get('/bmiCalculator', function(req, res) {
+    res.sendFile(__dirname + '/bmiCalculator.html');
 })
 
-app.post('/', function(req, res) {
-    var height=Number(req.body.height);
-    var weight=Number(req.body.weight);
-    var bmi=weight/(height*height);
-    res.send('Your BMI is '+bmi);
-});
+app.post('/bmiCalculator', function(req, res) {
+    var height =parseFloat(req.body.height)
+    var weight =parseFloat(req.body.weight)
+    var bmi=weight/(height*height)
 
+    res.send('Your BMI is '+bmi)
 
+})
 
 app.listen(3005 ,function(){
     console.log('Server is running on port 3005');
