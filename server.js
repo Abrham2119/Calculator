@@ -30,7 +30,7 @@ app.post('/',function(req,res){
 //BMI-calculator
 
 app.get('/bmiCalculator', function(req, res) {
-    res.sendFile(__dirname + '/bmiCalculator.html');
+    res.sendFile(__dirname+'/bmiCalculator.html');
 })
 
 app.post('/bmiCalculator', function(req, res) {
@@ -45,5 +45,7 @@ app.post('/bmiCalculator', function(req, res) {
 app.listen(3005 ,function(){
     console.log('Server is running on port 3005');
 });
+
+
 
 //expressjs.com
